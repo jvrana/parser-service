@@ -13,7 +13,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "micro-dev"
+    "dev": "micro-dev",
+    "docker": "docker build ."
   },
   "devDependencies": {
     "micro-dev": "^3.0.0"

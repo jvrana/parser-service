@@ -79,3 +79,5 @@ def test_generate_subjects(here):
         json.dump(sequences_json, f)
 
 ```
+
+## Docker service
