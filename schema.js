@@ -63,24 +63,24 @@ const typeDefs = `
 // Provide resolver functions for your schema fields
 const resolvers = {
     Query: {
-        tojson: async (root, args, context) => {
-            const response = await anyToJson(args.file, {"fileName": args.filename});
+        tojson: async (root, {file, filename}, context) => {
+            const response = await anyToJson(file, {"fileName": filename});
             return response[0]
         },
-        tojsons: async (root, args, context) => {
-            const promises = args.files.map((f, i) => {
-                return anyToJson(f, args.filenames[i])
+        tojsons: async (root, {files, filenames}, context) => {
+            const promises = files.map((f, i) => {
+                return anyToJson(f, filenames[i])
             });
             let res = await Promise.all(promises);
             res = res.map((x) => x[0]);
             return res
         },
-        tofasta: async (root, args, context) => {
-            const response = await jsonToFasta(args.json);
+        tofasta: async (root, { data }, context) => {
+            const response = await jsonToFasta(data);
             return response
         },
-        togenbank: async (root, args, context) => {
-            const response = await jsonToGenbank(args.json);
+        togenbank: async (root, { data }, context) => {
+            const response = await jsonToGenbank(data);
             return response
         },
     },
