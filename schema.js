@@ -38,6 +38,7 @@ const typeDefs = `
         sequence: String!,
         circular: Boolean,
         name: String!,
+        id: ID,
         description: String,
         features: [Feature!]
   }
