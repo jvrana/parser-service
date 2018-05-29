@@ -12,6 +12,7 @@ app.use('/json', bodyParser.urlencoded({extended: true}), graphqlExpress({ schem
 app.use('/graphql', bodyParser.json(), graphqlExpress({ schema: schema }));
 app.get('/graphiql', graphiqlExpress({ endpointURL: '/graphql' })); // if you want GraphiQL enabled
 
+console.log("LKLJL")
 app.listen(PORT, () => console.log("Parser listening on port 3000!"));
 //
 // const PORT = 3000;
