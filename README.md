@@ -68,7 +68,7 @@ def test_generate_subjects(here):
     # generate templates
     directory = os.path.join(here, "data/test_data/templates")
 
-    sequences = []s
+    sequences = []
     for path in tqdm(glob(os.path.join(directory, "*.gb"))):
         with open(path, 'r') as f:
             res = parse_to_json(f.read(), os.path.basename(path))
